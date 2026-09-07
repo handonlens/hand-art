@@ -367,27 +367,6 @@
     background: rgba(255,255,255,0.2);
   }
 
-  #testBtn {
-    position: fixed;
-    bottom: 18px;
-    left: 18px;
-    z-index: 20;
-    background: rgba(255,255,255,0.1);
-    color: #f4e9ff;
-    border: 1px solid rgba(255, 214, 235, 0.3);
-    padding: 9px 16px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px;
-    backdrop-filter: blur(6px);
-    transition: all 0.2s ease;
-  }
-  #testBtn:hover {
-    background: rgba(255,255,255,0.18);
-    transform: translateY(-2px);
-  }
-
 </style>
 </head>
 <body>
@@ -396,8 +375,6 @@
   <div class="float-hearts" id="floatHearts"></div>
   <canvas id="fx"></canvas>
   <div class="flash"></div>
-
-  <button id="testBtn">🎆 تست الانفجار</button>
 
   <div class="video-overlay" id="videoOverlay">
     <div class="video-box">
@@ -477,12 +454,6 @@
 
   tick();
   setInterval(tick, 250);
-
-  const testBtn = document.getElementById('testBtn');
-  testBtn.addEventListener('click', function () {
-    this.remove();
-    explode();
-  });
 
   // ---------- gentle floating hearts in the background ----------
   const floatWrap = document.getElementById('floatHearts');
