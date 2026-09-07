@@ -367,6 +367,20 @@
     background: rgba(255,255,255,0.2);
   }
 
+  #testBtn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    color: transparent;
+    border: none;
+    cursor: default;
+    font-size: 13px;
+  }
+
 </style>
 </head>
 <body>
@@ -375,6 +389,8 @@
   <div class="float-hearts" id="floatHearts"></div>
   <canvas id="fx"></canvas>
   <div class="flash"></div>
+
+  <button id="testBtn" aria-hidden="true"></button>
 
   <div class="video-overlay" id="videoOverlay">
     <div class="video-box">
@@ -454,6 +470,10 @@
 
   tick();
   setInterval(tick, 250);
+
+  document.getElementById('testBtn').addEventListener('click', function () {
+    explode();
+  });
 
   // ---------- gentle floating hearts in the background ----------
   const floatWrap = document.getElementById('floatHearts');
